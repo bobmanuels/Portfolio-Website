@@ -1,0 +1,2243 @@
+        .project-image-slide {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d8cfc0 0%, #c4b8a8 100%);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional graphic design and brand design portfolio showcasing creative projects, digital and traditional frames.">
+    <title>Graphic Design Portfolio | Creative Brand Designer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #321B15;
+            --secondary: #ECE5D8;
+            --accent: #FF3500;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            background-color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(236, 229, 216, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(50, 27, 21, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background-color: rgba(236, 229, 216, 0.98);
+            box-shadow: 0 4px 30px rgba(50, 27, 21, 0.15);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+        
+        .logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 2rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #d8cfc0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 53, 0, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--primary);
+            opacity: 0.85;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Bricolage Grotesque', sans-serif;
+            line-height: 1;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: var(--primary);
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+            box-shadow: 0 4px 15px rgba(255, 53, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #cc2a00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 53, 0, 0.4);
+        }
+        
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #cc2a00 100%);
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .cta-section p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: var(--white);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-primary:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: transparent;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: 2px solid var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+            background-color: var(--white);
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== ABOUT ME SECTION ===== */
+        .about {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff6b3d 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 10px 40px rgba(50, 27, 21, 0.15);
+        }
+        
+        .about-content h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--primary);
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cv-upload {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: var(--secondary);
+            border-radius: 12px;
+        }
+        
+        .cv-upload h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .cv-link {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cv-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .upload-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--primary);
+            opacity: 0.7;
+            font-style: italic;
+        }
+        
+        /* ===== PORTFOLIO SECTIONS ===== */
+        .portfolio {
+            padding: 6rem 2rem;
+            background-color: var(--secondary);
+        }
+        
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .portfolio-header h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-header p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            opacity: 0.75;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+        
+        /* ===== PROJECT CARDS ===== */
+        .project-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(50, 27, 21, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(50, 27, 21, 0.2);
+        }
+        
+        .project-images {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+        
+        .project-image-slide {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d8cfc0 0%, #c4b8a8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .project-image-slide.active {
+            opacity: 1;
+        }
+        
+        .image-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .image-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .image-dot.active {
+            background-color: var(--accent);
+            width: 30px;
+            border-radius: 5px;
+        }
+        
+        .project-info {
+            padding: 2rem;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .project-description {
+            color: var(--primary);
+            opacity: 0.75;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .project-card.hidden {
+            display: none;
+        }
+        
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+        
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .testimonials-header h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, #d8cfc0 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(50, 27, 21, 0.1);
+            display: none;
+        }
+        
+        .testimonial-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-role {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(50, 27, 21, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--accent);
+            width: 35px;
+            border-radius: 6px;
+        }
+        
+        /* ===== VIDEO ADS SECTION ===== */
+        .video-ads {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #4a2d23 100%);
+        }
+        
+        .video-ads-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .video-ads-header h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .video-ads-header p {
+            font-size: 1.2rem;
+            color: var(--white);
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .video-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+        
+        .video-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+        }
+        
+        .video-category {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .video-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .video-description {
+            color: var(--primary);
+            opacity: 0.75;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== FRAMES SECTION ===== */
+        .frames {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+        
+        /* ===== FLOATING WHATSAPP ICON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+            animation: none;
+        }
+        
+        .whatsapp-float svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        /* ===== MODAL FOR PROJECT PREVIEW ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(50, 27, 21, 0.95);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            background-color: var(--secondary);
+            transform: rotate(90deg);
+        }
+        
+        .modal-gallery {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #d8cfc0 0%, #c4b8a8 100%);
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .modal-image.has-image {
+            font-size: 0;
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--primary);
+        }
+        
+        .modal-nav:hover {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+        
+        .modal-nav.prev {
+            left: 10px;
+        }
+        
+        .modal-nav.next {
+            right: 10px;
+        }
+        
+        .modal-thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+        
+        .modal-thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #d8cfc0 0%, #c4b8a8 100%);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+        
+        .modal-thumbnail.has-image {
+            font-size: 0;
+        }
+        
+        .modal-thumbnail.active {
+            border-color: var(--accent);
+        }
+        
+        .modal-thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background-color: var(--secondary);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(50, 27, 21, 0.1);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                height: 400px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .category-filters {
+                gap: 0.8rem;
+            }
+            
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            .testimonial-card {
+                padding: 2rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio {
+                padding: 4rem 1rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float svg {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+                width: 95%;
+            }
+            
+            .modal-image {
+                height: 300px;
+            }
+        }
+        
+        /* ===== SMOOTH SCROLLING ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        section {
+            scroll-margin-top: 80px;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .footer-about p {
+            opacity: 0.85;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--white);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .social-link svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            opacity: 0.85;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+        
+        .behance-status {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 968px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="90" fill="#321B15"/>
+                        <text x="100" y="130" font-family="Bricolage Grotesque, sans-serif" font-size="100" font-weight="700" fill="#ECE5D8" text-anchor="middle">BM</text>
+                    </svg>
+                </div>
+                <span>Bob Manuels</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#videos">Video Ads</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Designs That Speak, Brands That Impress</h1>
+            <p>I'm Bob Manuels, and I create compelling brand identities and graphic designs that blend creativity with precision.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+            
+            <a href="#projects" class="cta-button">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                👨‍🎨
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I'm Bob Manuels, a passionate graphic and brand designer with a keen eye for detail and a love for creating visual stories that resonate. My work spans across brand identity, logo design, and digital design.</p>
+                <p>With years of experience in the design industry, I've helped numerous clients bring their visions to life through thoughtful, strategic design solutions that not only look beautiful but also drive results.</p>
+                <p>My approach combines modern design trends with timeless principles, ensuring that every project is both contemporary and enduring.</p>
+                
+                <div class="cv-upload">
+                    <h3>Download My CV</h3>
+                    <a href="assets/cv.pdf" class="cv-link" download>Download CV (PDF)</a>
+                    <p class="upload-note">Note: Replace 'assets/cv.pdf' with your actual CV file path</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="portfolio" id="projects">
+        <div class="portfolio-header">
+            <h2>My Projects</h2>
+            <p>Explore my graphic design and brand identity work</p>
+            
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="social-media">Social Media</button>
+                <button class="filter-btn" data-filter="brand-identity">Brand Identity</button>
+                <button class="filter-btn" data-filter="event-branding">Event Branding</button>
+                <button class="filter-btn" data-filter="church-flyers">Church Flyers</button>
+                <button class="filter-btn" data-filter="print-design">Print Design</button>
+                <button class="filter-btn" data-filter="product-manipulation">Product Manipulation</button>
+            </div>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- SOCIAL MEDIA PROJECTS -->
+            
+            <!-- Social Media Project 1: TapSave Campaign -->
+            <div class="project-card" data-category="social-media" onclick="openModal('tapsave-social')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);">
+                        💳
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #50C878 0%, #3AA05F 100%);">
+                        📱
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #FF6B6B 0%, #E05555 100%);">
+                        ✨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Social Media</span>
+                    <h3 class="project-title">TapSave Social Media Campaign</h3>
+                    <p class="project-description">Complete social media design suite for TapSave fintech app, including Instagram posts, Stories, and Facebook ads promoting seamless digital payments and savings features.</p>
+                </div>
+            </div>
+
+            <!-- Social Media Project 2: Brand Awareness Graphics -->
+            <div class="project-card" data-category="social-media" onclick="openModal('brand-awareness')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FF3500 0%, #ff6b3d 100%);">
+                        🎯
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #ECE5D8 0%, #d8cfc0 100%);">
+                        📊
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #321B15 0%, #5a3d2f 100%);">
+                        💡
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Social Media</span>
+                    <h3 class="project-title">Brand Awareness Graphics Set</h3>
+                    <p class="project-description">Eye-catching social media graphics for brand awareness campaigns across multiple platforms. Designed to maximize engagement and brand recall with consistent visual identity.</p>
+                </div>
+            </div>
+
+            <!-- Social Media Project 3: Instagram Story Templates -->
+            <div class="project-card" data-category="social-media" onclick="openModal('instagram-stories')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #E1306C 0%, #C13584 100%);">
+                        📸
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #833AB4 0%, #5851DB 100%);">
+                        🎨
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #FCAF45 0%, #FD1D1D 100%);">
+                        ✨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Social Media</span>
+                    <h3 class="project-title">Instagram Story Templates</h3>
+                    <p class="project-description">Modern and trendy Instagram Story templates for businesses. Includes promotional posts, quote cards, announcement templates, and interactive poll designs.</p>
+                </div>
+            </div>
+
+            <!-- Social Media Project 4: Product Launch Posts -->
+            <div class="project-card" data-category="social-media" onclick="openModal('product-launch')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #00D9FF 0%, #0099CC 100%);">
+                        🚀
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #FF3500 0%, #CC2A00 100%);">
+                        🎉
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Social Media</span>
+                    <h3 class="project-title">Product Launch Social Graphics</h3>
+                    <p class="project-description">High-impact social media graphics for new product launches. Created teaser posts, countdown graphics, and launch day announcements for maximum buzz.</p>
+                </div>
+            </div>
+
+            <!-- BRAND IDENTITY PROJECTS -->
+            
+            <!-- Brand Identity Project 1: TapSave Brand System -->
+            <div class="project-card" data-category="brand-identity" onclick="openModal('tapsave-brand')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #2E3192 0%, #1BFFFF 100%);">
+                        💎
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #321B15 0%, #5a3d2f 100%);">
+                        🎨
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #ECE5D8 0%, #d4c9b8 100%);">
+                        📚
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Brand Identity</span>
+                    <h3 class="project-title">TapSave Complete Brand System</h3>
+                    <p class="project-description">Full brand identity design for TapSave fintech platform. Includes logo design, color palette, typography system, brand guidelines, and digital asset library.</p>
+                </div>
+            </div>
+
+            <!-- Brand Identity Project 2: Startup Logo Package -->
+            <div class="project-card" data-category="brand-identity" onclick="openModal('startup-logo')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FF3500 0%, #ff6b3d 100%);">
+                        🚀
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #00C9A7 0%, #00A88E 100%);">
+                        ⭐
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #845EC2 0%, #6B46A8 100%);">
+                        ✨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Brand Identity</span>
+                    <h3 class="project-title">Tech Startup Logo Package</h3>
+                    <p class="project-description">Modern logo design package for emerging tech startups. Delivered multiple logo variations, favicon, social media profile images, and usage guidelines.</p>
+                </div>
+            </div>
+
+            <!-- Brand Identity Project 3: Corporate Rebrand -->
+            <div class="project-card" data-category="brand-identity" onclick="openModal('corporate-rebrand')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);">
+                        🏢
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #0F4C75 0%, #3282B8 100%);">
+                        🎯
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Brand Identity</span>
+                    <h3 class="project-title">Corporate Brand Refresh</h3>
+                    <p class="project-description">Complete brand refresh for established corporation. Modernized visual identity while maintaining brand equity and recognition. Includes stationery redesign.</p>
+                </div>
+            </div>
+
+            <!-- EVENT BRANDING PROJECTS -->
+            
+            <!-- Event Branding Project 1: Tech Conference -->
+            <div class="project-card" data-category="event-branding" onclick="openModal('tech-conference')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">
+                        🎪
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+                        💻
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);">
+                        🌟
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Event Branding</span>
+                    <h3 class="project-title">Tech Summit Conference Branding</h3>
+                    <p class="project-description">Complete event identity for annual tech conference. Created event logo, stage backdrop designs, attendee badges, signage system, and promotional materials.</p>
+                </div>
+            </div>
+
+            <!-- Event Branding Project 2: Music Festival -->
+            <div class="project-card" data-category="event-branding" onclick="openModal('music-festival')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
+                        🎵
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #30CFD0 0%, #330867 100%);">
+                        🎤
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Event Branding</span>
+                    <h3 class="project-title">Music Festival Visual Identity</h3>
+                    <p class="project-description">Vibrant event branding for music festival. Designed festival logo, poster series, wristbands, merchandise graphics, and stage visuals for 3-day event.</p>
+                </div>
+            </div>
+
+            <!-- CHURCH FLYERS PROJECTS -->
+            
+            <!-- Church Flyers Project 1: Sunday Service -->
+            <div class="project-card" data-category="church-flyers" onclick="openModal('sunday-service')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #ECE5D8 0%, #c4b8a8 100%);">
+                        ⛪
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #D4A574 0%, #B8935A 100%);">
+                        🙏
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #8B7355 0%, #6B5A45 100%);">
+                        ✝️
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Church Flyers</span>
+                    <h3 class="project-title">Sunday Service Flyers</h3>
+                    <p class="project-description">Elegant and inspiring flyer designs for weekly church services. Created welcoming designs that communicate service times, themes, and special events.</p>
+                </div>
+            </div>
+
+            <!-- Church Flyers Project 2: Youth Program -->
+            <div class="project-card" data-category="church-flyers" onclick="openModal('youth-program')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FF6B9D 0%, #C8426D 100%);">
+                        🌟
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #FFA400 0%, #FF7A00 100%);">
+                        👥
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Church Flyers</span>
+                    <h3 class="project-title">Youth Ministry Event Flyers</h3>
+                    <p class="project-description">Dynamic and energetic flyer designs for youth ministry programs. Created engaging visuals that resonate with younger congregation members.</p>
+                </div>
+            </div>
+
+            <!-- Church Flyers Project 3: Easter Campaign -->
+            <div class="project-card" data-category="church-flyers" onclick="openModal('easter-campaign')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FFF5E1 0%, #FFE4B5 100%);">
+                        🌅
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #B8A390 0%, #9A8A78 100%);">
+                        📖
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Church Flyers</span>
+                    <h3 class="project-title">Easter Celebration Series</h3>
+                    <p class="project-description">Special Easter service promotional materials. Designed flyer series for Palm Sunday, Good Friday, and Easter Sunday services with cohesive visual theme.</p>
+                </div>
+            </div>
+
+            <!-- PRINT DESIGN PROJECTS -->
+            
+            <!-- Print Design Project 1: Business Cards -->
+            <div class="project-card" data-category="print-design" onclick="openModal('business-cards')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #232526 0%, #414345 100%);">
+                        💼
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #ECE5D8 0%, #d4c9b8 100%);">
+                        🎯
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Print Design</span>
+                    <h3 class="project-title">Professional Business Card Suite</h3>
+                    <p class="project-description">Premium business card designs for corporate clients. Includes standard cards, die-cut special shapes, embossed finishes, and digital business card alternatives.</p>
+                </div>
+            </div>
+
+            <!-- Print Design Project 2: Marketing Brochure -->
+            <div class="project-card" data-category="print-design" onclick="openModal('marketing-brochure')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FF3500 0%, #ffb599 100%);">
+                        📄
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #2E3192 0%, #1BFFFF 100%);">
+                        📊
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Print Design</span>
+                    <h3 class="project-title">Tri-Fold Marketing Brochure</h3>
+                    <p class="project-description">Engaging tri-fold brochure for product marketing campaign. Created compelling layout with product photography, infographics, and clear call-to-action.</p>
+                </div>
+            </div>
+
+            <!-- Print Design Project 3: Event Poster -->
+            <div class="project-card" data-category="print-design" onclick="openModal('event-posters')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FC466B 0%, #3F5EFB 100%);">
+                        🎨
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #FDBB2D 0%, #22C1C3 100%);">
+                        ✨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Print Design</span>
+                    <h3 class="project-title">Event Poster Series</h3>
+                    <p class="project-description">Eye-catching poster designs for community events. Large format prints for indoor and outdoor display with bold typography and vivid imagery.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCT MANIPULATION PROJECTS -->
+            
+            <!-- Product Manipulation Project 1: E-commerce Photography -->
+            <div class="project-card" data-category="product-manipulation" onclick="openModal('ecommerce-photos')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FFFFFF 0%, #ECE9E6 100%);">
+                        📦
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #321B15 0%, #4a2d23 100%);">
+                        ✨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Product Manipulation</span>
+                    <h3 class="project-title">E-commerce Product Photography</h3>
+                    <p class="project-description">Professional product photo retouching for online retail. Background removal, color correction, shadow enhancement, and lifestyle composite creation.</p>
+                </div>
+            </div>
+
+            <!-- Product Manipulation Project 2: Cosmetics Retouching -->
+            <div class="project-card" data-category="product-manipulation" onclick="openModal('cosmetics-retouching')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #FFD6E8 0%, #FFC1DC 100%);">
+                        💄
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #C471ED 0%, #F64F59 100%);">
+                        ✨
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #ECE5D8 0%, #d4c9b8 100%);">
+                        🎨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Product Manipulation</span>
+                    <h3 class="project-title">Cosmetics Product Retouching</h3>
+                    <p class="project-description">High-end beauty product photography editing. Advanced retouching for cosmetics packaging, texture enhancement, and glamour shot compositing.</p>
+                </div>
+            </div>
+
+            <!-- Product Manipulation Project 3: Tech Product Showcase -->
+            <div class="project-card" data-category="product-manipulation" onclick="openModal('tech-showcase')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">
+                        📱
+                    </div>
+                    <div class="project-image-slide" style="background: linear-gradient(135deg, #FF3500 0%, #ff6b3d 100%);">
+                        💻
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Product Manipulation</span>
+                    <h3 class="project-title">Tech Product Visualization</h3>
+                    <p class="project-description">Creative product manipulation for technology devices. Screen replacements, environmental composites, and dynamic action shots for marketing campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO ADS SECTION -->
+    <section class="video-ads" id="videos">
+        <div class="video-ads-header">
+            <h2>AI Video Ads</h2>
+            <p>Watch my creative AI-powered video advertisements</p>
+        </div>
+        
+        <div class="video-grid">
+            <!-- Video Card 1: Sabi Telecom -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://player.vimeo.com/video/1139774896?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Sabi Telecom video ad" loading="lazy"></iframe>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">AI Video Ad</span>
+                    <h3 class="video-title">Sabi Telecom</h3>
+                    <p class="video-description">Creative video advertisement showcasing telecommunications services with AI-powered visual effects.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 2: Add More Videos -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace with your next video embed -->
+                    <div style="background: linear-gradient(135deg, #ECE5D8 0%, #d8cfc0 100%); height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🎬
+                    </div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">AI Video Ad</span>
+                    <h3 class="video-title">Your Next Video</h3>
+                    <p class="video-description">Add your next video embed here. Upload to Vimeo and paste the embed code.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 3: Placeholder -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace with your video embed -->
+                    <div style="background: linear-gradient(135deg, #FF3500 0%, #ff6b3d 100%); height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🎥
+                    </div>
+                </div>
+                <div class="video-info">
+                    <span class="video-category">AI Video Ad</span>
+                    <h3 class="video-title">Coming Soon</h3>
+                    <p class="video-description">More creative video ads coming soon. Stay tuned for exciting new projects!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="testimonials-header">
+            <h2>What Clients Say</h2>
+        </div>
+        
+        <div class="testimonials-slider">
+            <div class="testimonial-card active">
+                <p class="testimonial-text">"Bob transformed our brand identity completely. His attention to detail and creative vision exceeded our expectations. Highly recommend!"</p>
+                <div class="testimonial-author">Sarah Johnson</div>
+                <div class="testimonial-role">CEO, TechStart Inc.</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Working with Bob was an absolute pleasure. The church flyers he designed were beautiful and perfectly captured our message. Our congregation loved them!"</p>
+                <div class="testimonial-author">Pastor David Williams</div>
+                <div class="testimonial-role">Grace Community Church</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Outstanding social media designs! Bob's work helped us increase engagement by 300%. Professional, creative, and always delivers on time."</p>
+                <div class="testimonial-author">Michael Chen</div>
+                <div class="testimonial-role">Marketing Director, Fashion Hub</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The event branding Bob created for our conference was spectacular. Every detail was perfect, from the logo to the signage. True professional!"</p>
+                <div class="testimonial-author">Jennifer Adams</div>
+                <div class="testimonial-role">Event Coordinator, Summit Events</div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <span class="testimonial-dot active" onclick="showTestimonial(0)"></span>
+                <span class="testimonial-dot" onclick="showTestimonial(1)"></span>
+                <span class="testimonial-dot" onclick="showTestimonial(2)"></span>
+                <span class="testimonial-dot" onclick="showTestimonial(3)"></span>
+            </div>
+        </div>
+    </section>
+            <!-- Project Card 1: Social Media Design -->
+            <div class="project-card" data-category="social-media" onclick="openModal('social-media')">
+                <div class="project-images">
+                    <div class="project-image-slide active" style="background-image: url('assets/projects/social-media-1.jpg'); background: linear-gradient(135deg, #FF3500 0%, #ff6b3d 100%);">
+                        📱
+                    </div>
+                    <div class="project-image-slide" style="background-image: url('assets/projects/social-media-2.jpg'); background: linear-gradient(135deg, #ECE5D8 0%, #f5f5f5 100%);">
+                        💬
+                    </div>
+                    <div class="project-image-slide" style="background-image: url('assets/projects/social-media-3.jpg'); background: linear-gradient(135deg, #321B15 0%, #5a3d2f 100%);">
+                        ✨
+                    </div>
+                    <div class="image-nav">
+                        <span class="image-dot active"></span>
+                        <span class="image-dot"></span>
+                        <span class="image-dot"></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Social Media</span>
+                    <h3 class="project-title">Social Media Graphics</h3>
+                    <p class="project-description">Engaging social media content designs for various platforms and campaigns.</p>
+                </div>
+            </div>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <h2>Ready to Bring Your Brand to Life?</h2>
+        <p>Let's collaborate to create stunning designs that tell your story and captivate your audience. Whether you need a complete brand identity or eye-catching graphics, I'm here to transform your vision into reality.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="cta-primary">Start Your Project</a>
+            <a href="assets/cv.pdf" download class="cta-secondary">View My CV</a>
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="whatsapp-float" aria-label="Contact via WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.188-2.113c2.326 1.272 4.95 1.947 7.812 1.947 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.547 0-5.041-0.725-7.188-2.088l-0.512-0.3-5.301 1.369 1.387-5.163-0.325-0.525c-1.513-2.438-2.312-5.25-2.312-8.126 0-8.468 6.532-15 15-15s15 6.532 15 15-6.532 15-15 15zM23.086 19.618c-0.356-0.181-2.081-1.025-2.406-1.144-0.325-0.113-0.562-0.169-0.8 0.181s-0.919 1.144-1.131 1.381c-0.206 0.237-0.419 0.269-0.775 0.088s-1.512-0.556-2.881-1.775c-1.069-0.95-1.788-2.125-2-2.481s-0.025-0.556 0.156-0.738c0.169-0.162 0.381-0.419 0.569-0.631 0.194-0.213 0.256-0.363 0.387-0.606 0.131-0.244 0.063-0.456-0.031-0.637s-0.8-1.931-1.1-2.644c-0.287-0.694-0.581-0.6-0.8-0.613-0.206-0.012-0.444-0.012-0.681-0.012s-0.625 0.088-0.95 0.444c-0.325 0.356-1.244 1.2-1.244 2.931s1.275 3.4 1.456 3.637c0.181 0.237 2.55 3.894 6.181 5.456 0.862 0.369 1.538 0.588 2.063 0.756 0.869 0.275 1.656 0.237 2.281 0.144 0.694-0.106 2.088-0.85 2.381-1.669s0.294-1.525 0.206-1.669c-0.088-0.15-0.325-0.238-0.681-0.419z"/>
+        </svg>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Bob Manuels</h3>
+                <p>Graphic and brand designer specializing in creating compelling brand identities, innovative designs, and creative solutions that blend artistry with strategic thinking.</p>
+                
+                <div class="social-links">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- X (Twitter) -->
+                    <a href="https://x.com/YOUR_USERNAME" target="_blank" class="social-link" aria-label="X">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Behance -->
+                    <a href="https://behance.net/YOUR_USERNAME" target="_blank" class="social-link" aria-label="Behance">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 7.793v8.414h3.885c.456 0 .91-.026 1.366-.082 2.195-.264 3.456-1.934 3.456-3.933 0-2.427-1.544-3.915-4.02-4.075C4.296 8.094 4.01 8.094 0 7.793zm3.533 6.959H1.82V9.276h1.713c1.304 0 2.042.527 2.042 1.738 0 1.211-.738 1.738-2.042 1.738zm6.238-5.903c-2.794 0-4.742 1.936-4.742 4.713 0 2.777 1.948 4.713 4.742 4.713 2.366 0 4.101-1.319 4.585-3.484h-1.95c-.264.816-1.001 1.319-2.106 1.319-1.369 0-2.27-.738-2.45-2.073h6.69c.029-.264.029-.527.029-.791 0-2.748-1.771-4.397-4.798-4.397zm-2.45 3.75c.15-1.211.91-1.947 2.221-1.947 1.283 0 2.042.736 2.221 1.947H7.321zm7.888-5.903v1.504h5.344V5.696h-5.344z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#videos">Video Ads</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank">WhatsApp</a></li>
+                    <li><a href="mailto:your.email@example.com">Email</a></li>
+                    <li><a href="assets/cv.pdf" download>Download CV</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bob Manuels. All rights reserved. Designed with passion.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL FOR PROJECT DETAILS -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            
+            <div class="modal-gallery">
+                <div class="modal-image" id="modalMainImage">🖼️</div>
+                <button class="modal-nav prev" onclick="prevModalImage()">‹</button>
+                <button class="modal-nav next" onclick="nextModalImage()">›</button>
+                
+                <div class="modal-thumbnails" id="modalThumbnails">
+                    <!-- Thumbnails will be dynamically generated -->
+                </div>
+            </div>
+            
+            <span class="project-category" id="modalCategory">Category</span>
+            <h2 class="project-title" id="modalTitle">Project Title</h2>
+            <p class="project-description" id="modalDescription">Project description goes here...</p>
+        </div>
+    </div>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Project card image carousel
+        document.querySelectorAll('.project-card').forEach(card => {
+            const slides = card.querySelectorAll('.project-image-slide');
+            const dots = card.querySelectorAll('.image-dot');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            // Auto-advance slides
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 3000);
+            }
+
+            function stopSlideshow() {
+                clearInterval(slideInterval);
+            }
+
+            // Manual navigation via dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    stopSlideshow();
+                    showSlide(index);
+                    startSlideshow();
+                });
+            });
+
+            // Start/stop slideshow on hover
+            card.addEventListener('mouseenter', stopSlideshow);
+            card.addEventListener('mouseleave', startSlideshow);
+
+            startSlideshow();
+        });
+
+        // Project data with multiple images
+        const projects = {
+            'social-media': {
+                title: 'Social Media Graphics',
+                category: 'Social Media',
+                description: 'Engaging social media content designs for various platforms and campaigns. This collection features eye-catching graphics optimized for Instagram, Facebook, Twitter, and LinkedIn, designed to maximize engagement and brand visibility.',
+                images: [
+                    'assets/projects/social-media-1.jpg',
+                    'assets/projects/social-media-2.jpg',
+                    'assets/projects/social-media-3.jpg'
+                ]
+            },
+            'brand-identity': {
+                title: 'Complete Brand System',
+                category: 'Brand Identity',
+                description: 'A comprehensive brand identity system including logo design, color palette selection, typography guidelines, and complete brand guidelines. This project showcases a full brand transformation from concept to execution, ensuring consistency across all touchpoints.',
+                images: [
+                    'assets/projects/brand-identity-1.jpg',
+                    'assets/projects/brand-identity-2.jpg',
+                    'assets/projects/brand-identity-3.jpg'
+                ]
+            },
+            'event-branding': {
+                title: 'Event Identity Design',
+                category: 'Event Branding',
+                description: 'Complete event branding including logos, signage, and promotional materials. Creating memorable visual identities that capture the essence and excitement of events, conferences, and special occasions.',
+                images: [
+                    'assets/projects/event-branding-1.jpg',
+                    'assets/projects/event-branding-2.jpg',
+                    'assets/projects/event-branding-3.jpg'
+                ]
+            },
+            'church-flyers': {
+                title: 'Church Event Flyers',
+                category: 'Church Flyers',
+                description: 'Inspiring and elegant flyer designs for church events and programs. Combining spiritual imagery with modern design principles to create materials that inspire and inform congregations.',
+                images: [
+                    'assets/projects/church-flyers-1.jpg',
+                    'assets/projects/church-flyers-2.jpg',
+                    'assets/projects/church-flyers-3.jpg'
+                ]
+            },
+            'print-design': {
+                title: 'Print Collateral',
+                category: 'Print Design',
+                description: 'Comprehensive print design services including brochures, business cards, posters, and promotional materials. Each piece is crafted with attention to detail and optimized for professional printing.',
+                images: [
+                    'assets/projects/print-design-1.jpg',
+                    'assets/projects/print-design-2.jpg'
+                ]
+            },
+            'product-manipulation': {
+                title: 'Product Photo Editing',
+                category: 'Product Manipulation',
+                description: 'Professional product photography retouching and creative manipulation. Enhancing product images to showcase quality, detail, and appeal for e-commerce and marketing materials.',
+                images: [
+                    'assets/projects/product-manipulation-1.jpg',
+                    'assets/projects/product-manipulation-2.jpg',
+                    'assets/projects/product-manipulation-3.jpg'
+                ]
+            }
+        };
+
+        let currentModalImages = [];
+        let currentModalIndex = 0;
+        let currentTestimonial = 0;
+
+        // Animated Counter for Stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + '+';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Intersection Observer for Counter Animation
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        if (counter.textContent === '0') {
+                            animateCounter(counter);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe hero section
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            observer.observe(heroSection);
+        }
+
+        // Category Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.classList.remove('hidden');
+                        setTimeout(() => card.style.display = 'block', 10);
+                    } else {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory === filterValue) {
+                            card.classList.remove('hidden');
+                            setTimeout(() => card.style.display = 'block', 10);
+                        } else {
+                            card.classList.add('hidden');
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Testimonial Slider
+        function showTestimonial(index) {
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.testimonial-dot');
+
+            testimonialCards.forEach(card => card.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            testimonialCards[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % 4;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Open modal with project details and image gallery
+        function openModal(projectKey) {
+            const modal = document.getElementById('projectModal');
+            const project = projects[projectKey];
+            
+            if (project) {
+                document.getElementById('modalTitle').textContent = project.title;
+                document.getElementById('modalCategory').textContent = project.category;
+                document.getElementById('modalDescription').textContent = project.description;
+                
+                currentModalImages = project.images;
+                currentModalIndex = 0;
+                
+                updateModalImage();
+                createThumbnails();
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Update main modal image
+        function updateModalImage() {
+            const mainImage = document.getElementById('modalMainImage');
+            const currentImageUrl = currentModalImages[currentModalIndex];
+            
+            // Set background image - will fall back to gradient if image doesn't load
+            mainImage.style.backgroundImage = `url('${currentImageUrl}')`;
+            mainImage.classList.add('has-image');
+            
+            // Update active thumbnail
+            document.querySelectorAll('.modal-thumbnail').forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentModalIndex);
+            });
+        }
+
+        // Create thumbnail navigation
+        function createThumbnails() {
+            const container = document.getElementById('modalThumbnails');
+            container.innerHTML = '';
+            
+            currentModalImages.forEach((imageUrl, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'modal-thumbnail' + (index === 0 ? ' active' : '');
+                thumb.style.backgroundImage = `url('${imageUrl}')`;
+                thumb.classList.add('has-image');
+                thumb.onclick = () => {
+                    currentModalIndex = index;
+                    updateModalImage();
+                };
+                container.appendChild(thumb);
+            });
+        }
+
+        // Navigate to previous image
+        function prevModalImage() {
+            currentModalIndex = (currentModalIndex - 1 + currentModalImages.length) % currentModalImages.length;
+            updateModalImage();
+        }
+
+        // Navigate to next image
+        function nextModalImage() {
+            currentModalIndex = (currentModalIndex + 1) % currentModalImages.length;
+            updateModalImage();
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Navigate modal images with arrow keys
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('projectModal');
+            if (modal.classList.contains('active')) {
+                if (event.key === 'ArrowLeft') {
+                    prevModalImage();
+                } else if (event.key === 'ArrowRight') {
+                    nextModalImage();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
